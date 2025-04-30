@@ -9,9 +9,23 @@ class AddTeman extends Component
 {
     public Teman $teman;
 
-    public function simpan()
+    public $nama;
+    public $angkatan;
+
+
+    public function mount()
     {
-        $this->teman->create();
+        $this->teman = new Teman();
+    }
+
+    public function tambah()
+    {
+        $this->teman->create([
+            'nama' => $this->nama,
+            'angkatan' => $this->angkatan,
+            'lulus' => false
+        ]);
+        $this->redirect('/');
     }
     
 

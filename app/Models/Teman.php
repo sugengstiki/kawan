@@ -11,5 +11,6 @@ class Teman extends Model
     use HasFactory;
 
     protected $table = 'teman';
+    protected $fillable = ['nama','angkatan','lulus'];
     //
 }
