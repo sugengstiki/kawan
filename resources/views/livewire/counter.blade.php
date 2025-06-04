@@ -9,9 +9,7 @@
             <div>
                 <input type="text" wire:model="search" placeholder="Search..." class="border rounded px-4 py-2">
             </div>
-            <div>
-                <button wire:click="create" class="bg-blue-500 text-white px-4 py-2 rounded">Create</button>
-            </div>
+            <livewire:add-teman />
         </div>
   
         <div class="py-4 px-3">
