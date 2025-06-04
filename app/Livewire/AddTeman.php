@@ -6,17 +6,28 @@ use App\Models\Teman;
 use Livewire\Component;
 
 class AddTeman extends Component
-{   
-    public $nama = '';
-    public $angkatan = '';
+{
+    public Teman $teman;
 
-    public function save(){
-        Teman::create(
-            $this->only(['nama','angkatan'])
-        );
+    public $nama;
+    public $angkatan;
 
-        return $this->redirect('/hitung');
+
+    public function mount()
+    {
+        $this->teman = new Teman();
     }
+
+    public function tambah()
+    {
+        $this->teman->create([
+            'nama' => $this->nama,
+            'angkatan' => $this->angkatan,
+            'lulus' => false
+        ]);
+        $this->redirect('/');
+    }
+    
 
     public function render()
     {

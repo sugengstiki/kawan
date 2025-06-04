@@ -9,7 +9,7 @@
             <div>
                 <input type="text" wire:model="search" placeholder="Search..." class="border rounded px-4 py-2">
             </div>
-            <livewire:add-teman />
+            <livewire:edit-teman />
         </div>
   
         <div class="py-4 px-3">
