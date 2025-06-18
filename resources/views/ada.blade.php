@@ -9,7 +9,7 @@
 </head>
 
 <body>
-    <livewire:add-teman />
+    
 </body>
 
 </html>

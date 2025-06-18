@@ -1,5 +1,14 @@
 <div>
 
+    @if (session()->has('message'))
+    <div
+        x-data="{ show: true }"
+        x-init="setTimeout(() => show = false, 3000)"
+        x-show="show"
+        class="fixed top-4 right-4 bg-green-100 border border-green-400 text-green-700 px-4 py-2 rounded shadow-lg z-50">
+        {{ session('message') }}
+    </div>
+    @endif
 
     <div class="relative overflow-x-auto">
         <div class="flex justify-between items-center pb-4 bg-white dark:bg-gray-900">
@@ -11,7 +20,7 @@
             </div>
             <livewire:edit-teman />
         </div>
-  
+
         <div class="py-4 px-3">
             <div class="flex">
                 <div class="flex space-x-4 item-center mb-3">
@@ -43,7 +52,7 @@
             </thead>
             <tbody>
                 @foreach($temans as $t)
-                <tr class="odd:bg-white odd:dark:bg-gray-900 even:bg-gray-50 even:dark:bg-gray-800 border-b dark:border-gray-700 border-gray-200 hover:bg-gray-50 dark:hover:bg-gray-600">
+                <tr wire:key="item-{{ $t->id }}" class="odd:bg-white odd:dark:bg-gray-900 even:bg-gray-50 even:dark:bg-gray-800 border-b dark:border-gray-700 border-gray-200 hover:bg-gray-50 dark:hover:bg-gray-600">
                     <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
                         {{ $t->nama }}
                     </th>
@@ -54,7 +63,7 @@
                         Laptop
                     </td>
                     <td class="px-6 py-4">
-                        $2999
+                        <livewire:edit-teman :teman="$t" />
                     </td>
                 </tr>
 
