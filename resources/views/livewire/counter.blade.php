@@ -18,21 +18,9 @@
             <div>
                 <input type="text" wire:model="search" placeholder="Search..." class="border rounded px-4 py-2">
             </div>
-            <livewire:edit-teman />
+            <livewire:add-teman />
         </div>
 
-        <div class="py-4 px-3">
-            <div class="flex">
-                <div class="flex space-x-4 item-center mb-3">
-                    <label for="">Per Page</label>
-                    <select wire:model.live="perPage" class="border rounded px-6 py-2">
-                        <option value="3">3</option>
-                        <option value="4">4</option>
-                        <option value="5">5</option>
-                    </select>
-                </div>
-            </div>
-        </div>
         <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
             <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
                 <tr>

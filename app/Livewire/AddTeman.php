@@ -25,7 +25,7 @@ class AddTeman extends Component
             'angkatan' => $this->angkatan,
             'lulus' => false
         ]);
-        $this->redirect('/');
+        return $this->redirect('/hitung');
     }
     
 
